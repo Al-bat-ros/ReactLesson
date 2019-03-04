@@ -21,7 +21,8 @@ ReactDOM.render (
     place
 );
 */
-
+//-------------------------------------------------------
+/*
 class Elem extends React.Component {
     render() {
         return (
@@ -43,3 +44,37 @@ ReactDOM.render (
     </div>,
     place
 )
+*/
+//----------------------------------------------------------
+
+class Elem extends React.Component {
+    edit() {
+        alert('Редактировать');
+    };
+
+    remove() {
+        alert('Удалить');
+    };
+
+    render() {
+        return (
+            <div className='box'>
+                <div className='text'>{this.props.children}</div>
+                <button onClick={this.edit} className='btn light' >Редактировать</button>
+                <button onClick={this.remove} className='btn red' >Удалить</button>
+
+            </div>
+        )
+    }
+
+}
+const place = document.getElementById('example');
+
+ReactDOM.render (
+    <div className='field'>
+        <Elem>Hey, it is my</Elem>
+        <Elem>Number 5</Elem>
+        <Elem>Hello World</Elem>
+    </div>,
+    place
+);
